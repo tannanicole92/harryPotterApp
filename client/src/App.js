@@ -1,9 +1,12 @@
 import React, {useReducer} from 'react';
 import './App.scss';
+import "./assets/scss/material-kit-react.scss";
 import { Router } from '@reach/router';
+import NavBar from './views/NavBar.js';
 import Home from './views/Home.js';
 import LoginSignUp from './views/LoginSignUp';
 import Profile from './views/Profile';
+
 export const AuthContext = React.createContext();
 
 const initialState = {
@@ -35,7 +38,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.payload
-      }
+      };
     default:
       return state;
   }
@@ -46,6 +49,7 @@ function App() {
   return (
     <AuthContext.Provider value={{state,dispatch}}>
       <div className="App">
+        <NavBar />
         <Router>
           <Home path="/" />
           <LoginSignUp path="/login" />
