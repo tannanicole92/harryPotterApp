@@ -1,12 +1,14 @@
 import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
-import AuthContext from '../App';
+import { AuthContext } from '../App';
 import ActionButton from '../components/widgets/ActionButton';
 import UserCredsForm from '../components/forms/UserCredsForm';
 
 const Profile = (props) => {
   const { id } = props;
   const {state, dispatch} = useContext(AuthContext);
+  console.log(state);
+  console.log(state.user);
   const [user, setUser] = useState('');
   const [loaded, setLoaded] = useState(false);
   const [editUser, setEditUser] = useState(false);
@@ -25,9 +27,16 @@ const Profile = (props) => {
         })
         .catch((err) => {
           console.log(err);
-        })
+        });
+      if (state && state.user && (state.user._id === id)) {
+        setUserInputs({
+          firstName: state.user.firstName,
+          lastName: state.user.lastName,
+          email: state.user.email
+        });
+      }
     }
-  }, [id])
+  }, [id, state])
 
   const updatingUser = (event) => {
     event.preventDefault();
@@ -52,8 +61,8 @@ const Profile = (props) => {
     });
   }
   return (
-    <div>
-      { state.user._id === user._id ?
+    <div className="fullHeight">
+      { (loaded && user && state && state.user && state.user._id === user._id) ?
         <div>
         { (editUser === false) ?
           <ActionButton action={() => setEditUser(true)} text="Edit Profile" />

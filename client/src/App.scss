@@ -1,3 +1,31 @@
+html, body, #root {
+  height: 100%;
+}
+
 .App {
-  text-align: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  > * {
+    background-color: transparent;
+  }
+}
+.bigbackground {
+  height: 600px;
+  width: 600px;
+  margin: 20px;
+  background-color: grey;
+}
+.makeStyles-dark-58 {
+  .makeStyles-title-49 {
+    color: #9fa39f;
+  }
+}
+.paddedContainer {
+  padding-bottom: 20px;
+}
+.fullHeight {
+  min-height: 100%;
 }

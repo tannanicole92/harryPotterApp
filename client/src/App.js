@@ -6,6 +6,8 @@ import NavBar from './views/NavBar.js';
 import Home from './views/Home.js';
 import LoginSignUp from './views/LoginSignUp';
 import Profile from './views/Profile';
+import Quizzes from './views/Quizzes';
+import backgroundImage from "./assets/images/harrypotterbackground.jpg";
 
 export const AuthContext = React.createContext();
 
@@ -48,13 +50,14 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <AuthContext.Provider value={{state,dispatch}}>
-      <div className="App">
+      <div className="App fullHeight" style={{ backgroundImage: "url(" + backgroundImage + ")" }}>
         <NavBar />
         <Router>
           <Home path="/" />
           <LoginSignUp path="/login" />
           <LoginSignUp path="/:signup" />
           <Profile path="/profile/:id" />
+          <Quizzes path="/quizzes" />
         </Router>
       </div>
     </AuthContext.Provider>

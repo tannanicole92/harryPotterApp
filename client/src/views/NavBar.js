@@ -6,8 +6,7 @@ import axios from 'axios';
 
 const NavBar = (props) => {
   const { state, dispatch } = useContext(AuthContext);
-  console.log(useContext(AuthContext));
-  console.log(state.user);
+
   const logout = () => {
     axios.post('http://localhost:8000/api/logout')
         .then((res) => {
@@ -25,9 +24,9 @@ const NavBar = (props) => {
   return (
     <div>
     {state.user ?
-      <Navigation />
-      :
       <Navigation currentUser={state.user} logout={logout} />
+      :
+      <Navigation />
     }
     </div>
   );

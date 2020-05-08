@@ -2,10 +2,6 @@ import { container, title } from "../material-kit-react.js";
 import headerLinksStyle from "./headerLinksStyle.js";
 
 const navigationStyle = theme => ({
-  section: {
-    padding: "70px 0",
-    paddingTop: "0"
-  },
   container,
   title: {
     ...title,
@@ -14,7 +10,6 @@ const navigationStyle = theme => ({
     textDecoration: "none"
   },
   navbar: {
-    marginBottom: "-20px",
     zIndex: "100",
     position: "relative",
     overflow: "hidden",

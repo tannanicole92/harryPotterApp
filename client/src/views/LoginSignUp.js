@@ -68,7 +68,7 @@ const LoginSignUp = (props) => {
     }
   };
   return(
-    <div>
+    <div className="fullHeight">
       <UserCredsForm onChangeProp={onChange} submitText={submitText} onSubmitProp={onSubmit} userInputs={userCreds} />
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { navigate } from '@reach/router';
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
@@ -61,7 +62,7 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const brandComponent = <Button className={classes.title} onClick={()=> navigate("/")}>{brand}</Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -75,10 +76,10 @@ export default function Header(props) {
             brandComponent
           )}
         </div>
-        <Hidden smDown implementation="css">
+        <Hidden xsDown implementation="css">
           {rightLinks}
         </Hidden>
-        <Hidden mdUp>
+        <Hidden smUp>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -88,7 +89,7 @@ export default function Header(props) {
           </IconButton>
         </Hidden>
       </Toolbar>
-      <Hidden mdUp implementation="js">
+      <Hidden smUp implementation="js">
         <Drawer
           variant="temporary"
           anchor={"right"}
