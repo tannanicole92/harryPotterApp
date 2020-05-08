@@ -16,7 +16,7 @@ const Navigation = (props) => {
     <div id="navbar" className={classes.navbar}>
       <div className={classes.navigation}>
         <Header fixed changeColorOnScroll={{
-          height: 200,
+          height: '100px',
           color: "dark"
         }} brand="Potterheads" color="transparent" rightLinks=
             {

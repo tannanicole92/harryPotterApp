@@ -54,7 +54,7 @@ const headerStyle = {
     borderRadius: "3px",
     fontWeight: "600",
     textTransform: "none",
-    color: "#3c3b3f",
+    color: "#3f414e",
     letterSpacing: "unset",
     "&:hover,&:focus": {
       color: "inherit",

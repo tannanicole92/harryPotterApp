@@ -23,6 +23,12 @@ html, body, #root {
     color: #9fa39f;
   }
 }
+
+.fixedPost {
+  width: fit-content;
+  position: fixed;
+  margin-left: 1.5em;
+}
 .paddedContainer {
   padding-bottom: 20px;
 }
