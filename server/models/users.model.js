@@ -23,6 +23,15 @@ const UsersSchema = new mongoose.Schema({
       type: String,
       required: [true, "Password is required"],
       minlength: [8, "Password must be 8 characters or longer"]
+    },
+    primaryColor: {
+      type: String
+    },
+    secondaryColor: {
+      type: String
+    },
+    house: {
+      type: String
     }
 }, { timestamps: true });
 

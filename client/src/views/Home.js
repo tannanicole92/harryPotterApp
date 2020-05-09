@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from "../App";
 import Forums from './Forums';
 import { navigate } from '@reach/router';
-import { Container } from '@material-ui/core';
 import axios from 'axios';
 import ForumForm from '../components/forms/ForumForm';
 
 const Home = () => {
-  const { state, dispatch } = useContext(AuthContext);
+  const { state } = useContext(AuthContext);
   const [forums, setForums] = useState([]);
   const [value, setValue] = useState('');
   const [disabled, setDisabled] = useState(true);

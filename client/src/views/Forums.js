@@ -4,9 +4,8 @@ import SearchForm from '../components/forms/SearchForm';
 
 import ForumList from '../components/ForumList';
 
-const Forums = (props) => {
+const ForumsView = (props) => {
   const { forums } = props;
-
   return (
     <Grid direction="column" container alignItems="center">
       <SearchForm />
@@ -21,4 +20,4 @@ const Forums = (props) => {
   );
 }
 
-export default Forums;
+export default ForumsView;

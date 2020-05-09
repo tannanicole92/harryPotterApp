@@ -5,8 +5,9 @@ import Avatar from '@material-ui/core/Avatar';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
-  avatar: {
-    backgroundColor: 'green',
+  subHeader: {
+    color: 'white',
+    opacity: .5,
   }
 }));
 
@@ -27,16 +28,25 @@ const ForumHeading = (props) => {
         .catch(err => console.log(err));
   }, [forum]);
 
+  const getStyle = (owner) => {
+    return {
+      backgroundColor: owner.primaryColor || 'grey',
+      color: owner.secondaryColor || 'black'
+    }
+  };
+
   if (loaded) {
     return (
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
+          <Avatar style={getStyle(owner)} aria-label="recipe">
             {owner.firstName.charAt(0)}{owner.lastName.charAt(0)}
           </Avatar>
         }
         title={owner.firstName + ' ' + owner.lastName + "'s forum on " + forum.topic}
-        subheader={created}
+        subheader={
+          <span className={classes.subHeader}>{created}</span>
+        }
       />
     );
   } else {
