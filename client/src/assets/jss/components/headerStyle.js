@@ -54,11 +54,13 @@ const headerStyle = {
     borderRadius: "3px",
     fontWeight: "600",
     textTransform: "none",
-    color: "#3f414e",
+    color: 'white',
+    textShadow: '#000000 1px 0 5px',
     letterSpacing: "unset",
-    "&:hover,&:focus": {
-      color: "inherit",
-      background: "transparent"
+    "&:hover,&:focus,&:active": {
+      color: "#3f414e",
+      background: "transparent",
+      textShadow: 'none',
     }
   },
   appResponsive: {

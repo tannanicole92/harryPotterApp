@@ -2,6 +2,7 @@ const sortingQuestions = [
   {
     question: "What would you least liked to be called?",
     name: "questionOne",
+    value: '',
     values: [
       {
         value: "Cowardly",
@@ -20,6 +21,7 @@ const sortingQuestions = [
   {
     question: "How would you want people to remember you?",
     name: "questionTwo",
+    value: '',
     values: [
       {
         value: "Think of your achievements",
@@ -39,6 +41,7 @@ const sortingQuestions = [
   {
     question: "If you could have a superpower, which would you choose?",
     name: "questionThree",
+    value: '',
     values: [
       {
         value: "Invisibility",
@@ -57,6 +60,7 @@ const sortingQuestions = [
   {
     question: "Which subject at Hogwarts would you be most interested in studying?",
     name: "questionFour",
+    value: '',
     values: [
       {
         value: "Secrets about the castle",
@@ -76,17 +80,17 @@ const sortingQuestions = [
   {
     question: "You and your friends need to cross a bridge guarded by a river troll. He insists that one of you fight him before you can cross. What do you do?",
     name: "questionFive",
+    value: '',
     values: [
       {
-        value: "Have all 3 of you fight (without telling the troll)",
-        point: "Slytherin"
-
+        value: "Confuse the troll",
+        point: "Ravenclaw"
       },{
         value: "Draw lots to see who fights",
         point: "Hufflepuff"
       },{
-        value: "Confuse the troll",
-        point: "Ravenclaw"
+        value: "Have all 3 of you fight (without telling the troll)",
+        point: "Slytherin"
       },{
         value: "Volunteer to fight",
         point: "Gryffindor"
@@ -95,6 +99,7 @@ const sortingQuestions = [
   {
     question: "A Muggle approaches you and says you’re a wizard. How do you react?",
     name: "questionSix",
+    value: '',
     values: [
       {
         value: "Agree and offer a sample of a jinx",
@@ -113,6 +118,7 @@ const sortingQuestions = [
   {
     question: "It's your fifth year at Hogwarts, and you've just received a Howler from your parents. What for?",
     name: "questionSeven",
+    value: '',
     values: [
       {
         value: "Sneaking into the Forbidden Forest at night on a dare.",
@@ -123,7 +129,6 @@ const sortingQuestions = [
       },{
         value: "Getting caught cheating in my Divination O.W.L.",
         point: "Slytherin"
-
       },{
         value: "Being put in detention after I was caught in the library after hours.",
         point: "Ravenclaw"
@@ -132,6 +137,7 @@ const sortingQuestions = [
   {
     question: "Which of these Dumbledore quotations speaks to you?",
     name: "questionEight",
+    value: '',
     values: [
       {
         value: '"It does not do to dwell on dreams and forget to live."',
@@ -151,6 +157,7 @@ const sortingQuestions = [
   {
     question: "Which of your skills are you most proud of?",
     name: "questionNine",
+    value: '',
     values: [
       {
         value: "My ability to get what I want.",
@@ -169,13 +176,14 @@ const sortingQuestions = [
   {
     question: "Which path do you intend to follow after leaving Hogwarts?",
     name: "questionTen",
+    value: '',
     values: [
       {
-        value: "I'd continue to work hard in order to achieve as much success as possible.",
-        point: "Ravenclaw"
-      },{
         value: "I think I'd travel for a while before committing to a career.",
         point: "Slytherin"
+      },{
+        value: "I'd continue to work hard in order to achieve as much success as possible.",
+        point: "Ravenclaw"
       },{
         value: "I'd join the Ministry – I want to make a difference in the world.",
         point: "Gryffindor"
@@ -187,6 +195,7 @@ const sortingQuestions = [
   {
     question: "What would you want to be remembered as?",
     name: "questionEleven",
+    value: '',
     values: [
       {
         value: "Good",
@@ -205,6 +214,7 @@ const sortingQuestions = [
   {
     question: "If you were to choose a potion, which would you choose?",
     name: "questionTwelve",
+    value: '',
     values: [
       {
         value: "A power potion",

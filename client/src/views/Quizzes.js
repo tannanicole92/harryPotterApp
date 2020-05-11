@@ -5,15 +5,13 @@ import ImageButton from '../components/widgets/ImageButton';
 import { Grid } from '@material-ui/core';
 import backgroundImage from "../assets/images/sorting-hat-2.jpg";
 import SortingQuiz from '../components/quizzes/SortingQuiz';
-import sortingQuestions from "../assets/jss/sortingQuestions";
+import sortQuestions from "../assets/jss/sortingQuestions";
 
 const Quizzes = () => {
-  const [house, setHouse] = useState('');
   const {state, dispatch} = useContext(AuthContext);
-  var houseScore = {Gryffindor: 0, Slytherin: 0, Ravenclaw: 0, Hufflepuff: 0};
-  const [sortingAnswers, setSortingAnswers] = useState({});
   const [showQuizzes, setShowQuizzes] = useState(true);
   const [showSortingQuiz, setShowSortingQuiz] = useState(true);
+  const [sortingQuestions, setSortingQuestions] = useState(sortQuestions);
   const sortingImage = {
     url: backgroundImage,
     title: "Sorting Hat Quiz"
@@ -27,13 +25,47 @@ const Quizzes = () => {
   };
 
   const onChangeProp = (event) => {
-    setSortingAnswers({
-      ...sortingAnswers,
-      [event.target.name]: event.target.value
+    let sortingAnswers = [...sortingQuestions];
+    sortingAnswers.forEach((item, i) => {
+      if (item.name === event.target.name) {
+        item.value = event.target.value;
+        console.log(item.value);
+      }
     });
+    setSortingQuestions(sortingAnswers);
+    console.log(sortingQuestions);
   };
 
   const submitSortingProp = (event) => {
+    event.preventDefault();
+    let g = 0;
+    let s = 0;
+    let r = 0;
+    let h = 0;
+    let house;
+    sortingQuestions.forEach((item, i) => {
+      if (item.value === "Gryffindor") {
+        g++
+      } else if (item.value === "Slytherin") {
+        s++
+      } else if (item.value === "Ravenclaw") {
+        r++;
+      } else if (item.value === "Hufflepuff") {
+        h++;
+      }
+    });
+    let highest = Math.max(g, s, r, h);
+    if (highest === g) {
+      house = "Gryffindor";
+    } else if (highest === s) {
+      house = "Slytherin";
+    } else if (highest === r) {
+      house = "Ravenclaw";
+    } else if (highest === h) {
+      house = "Hufflepuff";
+    }
+    console.log(highest);
+    console.log(house);
     var primaryColor;
     var secondaryColor;
     if (house === 'Gryffindor') {
