@@ -3,13 +3,25 @@ import axios from 'axios';
 import { AuthContext } from '../App';
 import ImageButton from '../components/widgets/ImageButton';
 import { Grid } from '@material-ui/core';
+import { makeStyles } from "@material-ui/core/styles";
 import backgroundImage from "../assets/images/sorting-hat-2.jpg";
 import SortingQuiz from '../components/quizzes/SortingQuiz';
 import sortQuestions from "../assets/jss/sortingQuestions";
 import Dialog from '../components/Dialog';
 import HouseResult from '../components/HouseResult';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: 'black',
+    color: 'white'
+  },
+  content: {
+    overflow: 'hidden'
+  }
+}));
+
 const Quizzes = () => {
+  const classes = useStyles();
   const {state, dispatch} = useContext(AuthContext);
   const [showQuizzes, setShowQuizzes] = useState(true);
   const [showSortingQuiz, setShowSortingQuiz] = useState(true);
@@ -320,8 +332,8 @@ const Quizzes = () => {
       </div>
     }
     { showDialog &&
-      <Dialog maxWidth='md' open={showDialog} handleClose={closeDialog} title={dialogTitle} content={
-        <HouseResult house={house} />
+      <Dialog classes={{root: classes.root}} maxWidth='md' open={showDialog} handleClose={closeDialog} title={dialogTitle} content={
+        <HouseResult classes={{root: classes.content}} house={house} />
       } />
     }
     </Grid>
