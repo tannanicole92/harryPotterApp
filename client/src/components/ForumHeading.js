@@ -32,7 +32,7 @@ const ForumHeading = (props) => {
     return {
       backgroundColor: owner.primaryColor || 'grey',
       color: owner.secondaryColor || 'black'
-    }
+    };
   };
 
   if (loaded) {
@@ -50,7 +50,7 @@ const ForumHeading = (props) => {
       />
     );
   } else {
-    return(
+    return (
       <CardHeader />
     );
   }

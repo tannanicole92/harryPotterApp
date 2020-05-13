@@ -53,7 +53,7 @@ const SortingQuiz = (props) => {
           <FormLabel component="legend" className={classes.question}>{item.question}</FormLabel>
             <RadioGroup aria-label="quiz" name={item.name} value={item.value} onChange={onChangeProp}>
             { item.values.map((itemVal, idx) => (
-              <FormControlLabel className={classes.options} key={'values'+idx} value={itemVal.point} control={<Radio className={classes.radioButtons} color="white" />} label={itemVal.value} />
+              <FormControlLabel className={classes.options} key={'values'+idx} value={itemVal.point} control={<Radio className={classes.radioButtons} color="default" />} label={itemVal.value} />
               ))}
             </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>

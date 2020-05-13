@@ -12,6 +12,14 @@ html, body, #root {
     background-color: transparent;
   }
 }
+
+.imageBackground {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 600px;
+}
 .bigbackground {
   height: 600px;
   width: 600px;

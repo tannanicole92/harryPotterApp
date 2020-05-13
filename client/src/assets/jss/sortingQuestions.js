@@ -230,6 +230,25 @@ const sortingQuestions = [
         point: "Ravenclaw"
     }]
   },
+  {
+    question: "Which Hogwarts house do you feel you identify with most closely?",
+    name: "questionThirteen",
+    value: '',
+    values: [
+      {
+        value: "Gryffindor",
+        point: "Gryffindor"
+      },{
+        value: "Slytherin",
+        point: "Slytherin"
+      },{
+        value: "Ravenclaw",
+        point: "Ravenclaw"
+      },{
+        value: "Hufflepuff",
+        point: "Hufflepuff"
+    }]
+  }
   ];
 
   export default sortingQuestions;

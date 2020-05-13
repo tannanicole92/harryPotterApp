@@ -32,6 +32,20 @@ const UsersSchema = new mongoose.Schema({
     },
     house: {
       type: String
+    },
+    score: {
+      gryffindor: {
+        type: String
+      },
+      slytherin: {
+        type: String
+      },
+      ravenclaw: {
+        type: String
+      },
+      hufflepuff: {
+        type: String
+      }
     }
 }, { timestamps: true });
 
